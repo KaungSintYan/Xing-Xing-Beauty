@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../Users/dell/Documents/blog/os_shopping"
+		},
+		{
+			"path": "../php"
+		},
+		{
+			"path": "../../../xampp/htdocs/PHP"
+		},
+		{
+			"path": "../../../xampp/htdocs/Day01"
+		},
+		{
+			"path": "../../../Users/dell/Documents/Beauty_Salon"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "barber-shop-template"
+	}
+}

@@ -1,0 +1,443 @@
+<?php
+    require_once 'dbconnection.php'; 
+
+    if(isset($_POST['bookingBtn'])){
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $teacher = $_POST['teacher'];
+        $service = $_POST['service'];
+        $material = $_POST['material'];
+        $date = $_POST['date'];
+        $time = $_POST['time'];
+        $detail = $_POST['detail'];
+    }
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Barber X - Barber Shop Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+    <body>
+        <!-- Top Bar Start -->
+        <div class="top-bar d-none d-md-block">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="top-bar-left">
+                            <div class="text">
+                                <h2>8:00 - 9:00</h2>
+                                <p>Opening Hour Mon - Fri</p>
+                            </div>
+                            <div class="text">
+                                <h2>+123 456 7890</h2>
+                                <p>Call Us For Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="top-bar-right">
+                            <div class="social">
+                                <a href=""><i class="fab fa-twitter"></i></a>
+                                <a href=""><i class="fab fa-facebook-f"></i></a>
+                                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End -->
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="home.html" class="navbar-brand"><span>Xing</span>Xing</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.php" class="nav-item nav-link ">Home</a>
+                        <a href="about.php" class="nav-item nav-link ">About</a>
+                        <a href="service.php" class="nav-item nav-link">Service</a>
+                        <a href="sales.php" class="nav-item nav-link">Sales</a>
+                        <a href="team.php" class="nav-item nav-link active">Booking</a>
+                        <a href="portfolio.php" class="nav-item nav-link">Gallery</a>
+                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-white">Appointment</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="index.html" class="text-white">Home</a>
+                        <a href="team.html" class="text-white">Booking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <div>
+            <h1 class="box1 text-center">Make an Appointment</h1>
+        </div>
+
+        <div class=" mb-5">
+            <p class="text-center">Xing xing beauty ရဲ့ ဆရာမ သည် Permanent makeup နဲ့ ပတ်သက်ပြီး<br> ကမ္ဘာ အဆင့်မြင့်ဆုံး သင်တန်းကျောင်းမှာ သင်ယူလေ့လာထားပါတယ် ကမ္ဘာ့နံပါတ် (၁) သင်တန်းကျောင်း .... Phi Academy / Academy S.</p>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div class="head2">
+                        <div class="containerII mb-5">
+                            <img src="Images/trEL.jpg" alt="" class="photo1 rounded" width="100%">
+                            <div class=" mt-5">
+                                <div class="overlay rounded">
+                                    <p class=" text-white ml-4 mt-5" style="font-size: 18px;">
+                                        Name - Mrs. Ela <br><br>
+                                        Birth - 00/00/00 <br><br>
+                                        Position - Trainer in Eyelashed Extension <br><br> 
+                                        Award - Talent Award at Eye Contest 2020
+                                        History - ဆရာမ အဲလာသည်...... Thai / korea နိုင်ငံတွင် Eyelashed Extension နဲ့ ပတ်သက်ပြီး လေ့လာသင်ယူခဲ့ပြီး
+မျက်ခုံးသင်တန်း ကိုလည်း ထိုင်းနိုင်ငံတ​ွင် ေလ့လာသင်ယူခ့ဲပါတယ်
+2020 မြန်မာနိုင်ငံတွင် ကျင်းပသော မျက်တောင်ဆက်ပြိုင်ပွဲမှာလည်း Talent Awardsဆုရရှိခဲ့ပါတယ်
+ယခုလက်ရှိမှာလည်း Eyelashed Extension နဲ့ပတ်သက်ပြီး သင်တန်းပြ ဆရာ တစ်ဉီးပဲဖြစ်ပါတယ် <br><br>
+Workplace - Aung Min Gaung 2 Street, Kamayut Township, Yangon. (Nearly Gangnam Medical Center) Yangon, Myanmar.
+                                    </p>
+                                    <p class="psg1 text-white ml-4 mt-5"> 
+                        </p>
+                        <p> </p>
+                                </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                    <!-- <div class="head2">
+                        <h3 class=""> ဆရာမအဲလာ ( အမျှင်)  </h3>
+                        <p class=" mt-4 mb-4 text-secondary"><i class="fa-brands fa-slack"></i>  Gold Germany - 338,000 </p>
+                        <p class=" mt-4 mb-4 text-secondary"><i class="fa-brands fa-slack"></i> Germany - 298,000</p>
+                        <p class=" mt-4 mb-4 text-secondary"><i class="fa-brands fa-slack"></i> USA - 228,000  </p>
+                    </div> -->
+
+
+                    
+                </div>
+                <div class="col-6">
+                    <form action="" class="form1 shadow">
+                        <div class="soomed p-3">
+                            <form action="" method="POST">
+                                <div class="mb-4 d-inline-block">
+                                    <label for="" class="mb-2">First Name</label>
+                                    <input type="text" class="soome form-control" placeholder="Enter your first name" name="first_name">
+                                </div>
+
+                                <div class="mb-4 d-inline-block">
+                                    <label for="" class="mb-2">Last Name</label>
+                                    <input type="text" class="soome form-control" placeholder="Enter your last name" name="last_name">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="" class="mb-2">Email</label>
+                                    <input type="text" class="form-control" placeholder="Enter your email address" name="email">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="" class="mb-2">Phone</label>
+                                    <input type="number" class="form-control" placeholder="Enter your phone" name="phone">
+                                </div>
+
+                                <div class="mb-4">
+                                    <select name="" class="form-control" name="teacher">
+                                    <option value="">Select Teacher</option>
+                                    <option value="">ဆရာမရှင်းရှင်း</option>
+                                    <option value="">ဆရာမခင်မျိုးသူ</option>
+                                    <option value="">ဆရာမအဲလာ</option>
+                                    <option value="">ဆရာမသန်းသန်းခိုင်</option>
+                                    <option value="">Pro Artistဆရာမစန်းစန်း</option>
+                                    <option value="">ဆရာမအိပွင့်</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <select name="" class="form-control" name="service">
+                                    <option value="">Services</option>
+                                    <option value="">မျက်ခုံးသီးသန့် အမျှင်</option>
+                                    <option value="">မျက်ခုံးသီးသန့် ခဲမူန်(အပိတ်)</option>
+                                    <option value="">မျက်ခုံးသီးသန့် ရှေ့မျှင်နောက်ခဲမှုန် </option>
+                                    <option value="">မျက်ခုံး Hairstroke</option>
+                                    <option value="">နှုတ်ခမ်းအညိုဖျောက်ခြင်း</option>
+                                    <option value="">နှုတ်ခမ်းအရောင်သွင်းခြင်း</option>
+                                    <option value="">မျက်တောင်ဆက်</option>
+                                    <option value="">မျက်တောင်ကောက်</option>
+                                    <option value="">Eyeliner</option>
+                                    <option value="">Laser tattoo removal treatment</option>
+                                    <option value="">Phi removal treatment </option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <select name="" class="form-control" name="material">
+                                    <option value="">Materials</option>
+                                    <option value="">Gold Germany</option>
+                                    <option value="">Germany</option>
+                                    <option value="">USA</option>
+                                    <option value="">Korea</option>
+                                    <option value="">Japan</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4 d-inline-block">
+                                    <label for="" class="mb-2">Date</label>
+                                    <input type="date" value="Date" class="soome1 form-control" name="date">
+                                </div>
+
+                                <div class="mb-4 d-inline-block">
+                                    <label for="" class="mb-2">Time</label>
+                                    <input type="time" value="time" class="soome1 form-control" name="time">
+                                </div>
+
+                                <div class="mb-4">
+                                    <label for="" class="mb-2">Give us more details</label>
+                                    <input type="text" class="form-control" name="detail">
+                                </div>
+                                
+                                <div>
+                                    <input type="submit" value=" Upload an appointment " class=" bg-primary text-white form-control" name="bookingBtn">
+                                </div>
+                            </form>
+                            
+
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- <h3>Our Main Office</h3>
+      <p class=" mt-4 mb-4 text-secondary"><i class="fa-solid fa-location-dot"></i> Aung Min Gaung 2 Street, Kamayut Township, Yangon. </p>
+      <p class=" mt-4 mb-4 text-secondary"><i class="fa-solid fa-phone"></i> 09781122838</p>
+      <p class=" mt-4 mb-4 text-secondary"><i class="fa-solid fa-envelope"></i> admin@minabeauty.com </p> -->
+
+        <!-- <div class="main-div">
+
+    
+  <div class="sub-div col-6">
+    <div class="head2">
+      <div class="photo1 mb-5">
+        <img src="Images/trEL.jpg" alt="" class="photo1">
+      </div>
+    </div>
+
+    <div class="head2">
+      <h3 class=""> ဆရာမအဲလာ ( အမျှင်)  </h3>
+      <p class=" mt-4 mb-4 text-secondary"><i class="fa-brands fa-slack"></i>  Gold Germany - 338,000 </p>
+      <p class=" mt-4 mb-4 text-secondary"><i class="fa-brands fa-slack"></i> Germany - 298,000</p>
+      <p class=" mt-4 mb-4 text-secondary"><i class="fa-brands fa-slack"></i> USA - 228,000  </p>
+    </div>
+  </div>
+  <div class="col-5">
+      <form action="" class="form1 shadow">
+        <div class="soomed p-3">
+
+          <div class="mb-4 d-inline-block">
+            <label for="" class="mb-2">First Name</label>
+            <input type="text" class="soome form-control" placeholder="Enter your first name">
+          </div>
+
+          <div class="mb-4 d-inline-block">
+            <label for="" class="mb-2">Last Name</label>
+            <input type="text" class="soome form-control" placeholder="Enter your last name">
+          </div>
+
+          <div class="mb-4">
+            <label for="" class="mb-2">Email</label>
+            <input type="text" class="form-control" placeholder="Enter your email address">
+          </div>
+
+          <div class="mb-4">
+            <label for="" class="mb-2">Phone</label>
+            <input type="number" class="form-control" placeholder="Enter your phone">
+          </div>
+
+          <div class="mb-4">
+            <select name="" class="form-control">
+              <option value="">Select Teacher</option>
+              <option value="">ဆရာမရှင်းရှင်း</option>
+              <option value="">ဆရာမခင်မျိုးသူ</option>
+              <option value="">ဆရာမအဲလာ</option>
+              <option value="">ဆရာမသန်းသန်းခိုင်</option>
+              <option value="">Pro Artistဆရာမစန်းစန်း</option>
+              <option value="">ဆရာမအိပွင့်</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <select name="" class="form-control">
+              <option value="">Services</option>
+              <option value="">မျက်ခုံးသီးသန့် အမျှင်</option>
+              <option value="">မျက်ခုံးသီးသန့် ခဲမူန်(အပိတ်)</option>
+              <option value="">မျက်ခုံးသီးသန့် ရှေ့မျှင်နောက်ခဲမှုန် </option>
+              <option value="">မျက်ခုံး Hairstroke</option>
+              <option value="">နှုတ်ခမ်းအညိုဖျောက်ခြင်း</option>
+              <option value="">နှုတ်ခမ်းအရောင်သွင်းခြင်း</option>
+              <option value="">မျက်တောင်ဆက်</option>
+              <option value="">မျက်တောင်ကောက်</option>
+              <option value="">Eyeliner</option>
+              <option value="">Laser tattoo removal treatment</option>
+              <option value="">Phi removal treatment </option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <select name="" class="form-control">
+              <option value="">Types of Medicine</option>
+              <option value="">Gold Germany</option>
+              <option value="">Germany</option>
+              <option value="">USA</option>
+              <option value="">Korea</option>
+              <option value="">Japan</option>
+            </select>
+          </div>
+
+          <div class="mb-4 d-inline-block">
+            <label for="" class="mb-2">Date</label>
+            <input type="date" value="Date" class="soome1 form-control">
+          </div>
+
+          <div class="mb-4 d-inline-block">
+            <label for="" class="mb-2">Time</label>
+            <input type="time" value="time" class="soome1 form-control">
+          </div>
+
+          <div class="mb-4">
+            <label for="" class="mb-2">Give us more details</label>
+            <input type="text" class="form-control">
+          </div>
+          
+          <div>
+            <input type="submit" value=" Upload an appointment " class=" bg-primary text-white form-control">
+          </div>
+
+        </div>
+        
+      </form>
+  </div>
+</div> -->
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="footer-contact">
+                                    <h2>Salon Address</h2>
+                                    <p><i class="fa fa-map-marker-alt"></i>Aung Min Gaung 2 Street , Kamayut Township , Yangon . ( Nearly Gangnam Medical Center ) Yangon, Myanmar, 11201</p>
+                                    <p><i class="fa fa-phone-alt"></i>09 781 122 838</p>
+                                    <p><i class="fa fa-envelope"></i>info@example.com</p>
+                                    <div class="footer-social">
+                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><i class="fab fa-youtube"></i></a>
+                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="footer-link">
+                                    <h2>Quick Links</h2>
+                                    <a href="">Terms of use</a>
+                                    <a href="">Privacy policy</a>
+                                    <a href="">Cookies</a>
+                                    <a href="">Help</a>
+                                    <a href="">FQAs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet elit. Quisque eu lectus a leo dictum nec non quam. Tortor eu placerat rhoncus, lorem quam iaculis felis, sed lacus neque id eros.
+                            </p>
+                            <div class="form">
+                                <input class="form-control" placeholder="Email goes here">
+                                <button class="btn">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+        <!-- Contact Javascript File -->
+        <script src="mail/jqBootstrapValidation.min.js"></script>
+        <script src="mail/contact.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+</html>
