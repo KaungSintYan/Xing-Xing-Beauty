@@ -7,7 +7,7 @@ $result = mysqli_query($connection,$query);
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title> Xing Xing's Beauty - About </title>
+        <title> Xing Xing's Beauty - ABOUT </title>
         <link rel="shortcut icon" type="image/jpg" href="Images/logo.jpg">
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Free Website Template" name="keywords">
